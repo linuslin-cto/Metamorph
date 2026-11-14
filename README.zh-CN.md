@@ -173,7 +173,7 @@ Propose（改 harness） → Probe（rollout） → Compose（acceptTree）
 
 最新入库报告：**[`docs/EVAL.md`](docs/EVAL.md)** · JSON：[`docs/eval-scorecard.json`](docs/eval-scorecard.json)
 
-**Harness2 对齐 100 轮战役**（同 demo 账本 + `R=4k`/`P=3k` + agg/seq）：**99 / 100** 通过 · 详见 [`docs/EVAL.md`](docs/EVAL.md#harness2-对齐--100-轮自进化战役) · [`docs/h2evo100-campaign.json`](docs/h2evo100-campaign.json)
+**Harness2 对齐 100 轮战役**（同 demo 账本 + `R=4k`/`P=3k` + agg/seq）：**99 / 100** 通过 · 图表见 [`docs/EVAL.md`](docs/EVAL.md#harness2-对齐--100-轮自进化战役)
 
 ```bash
 mvn -q test -Dtest=SelfEvolutionTest,EvalScorecardTest
@@ -221,9 +221,8 @@ Metamorph/
 ├── LICENSE
 ├── docs/
 │   ├── i18n.md                   # 语言约定
-│   ├── EVAL.md                   # 最新打分 + H2 100 轮战役
-│   ├── eval-scorecard.json
-│   └── h2evo100-campaign.json    # 99/100 战役摘要
+│   ├── EVAL.md                   # 最新打分 + H2 100 轮图表
+│   └── eval-scorecard.json
 └── src/main/java/com/metamorph/
     ├── cli/
     ├── core/
@@ -242,8 +241,7 @@ Metamorph/
 | [README (EN)](README.md) | English |
 | [README (zh-CN)](README.zh-CN.md) | 本文 |
 | [国际化约定](docs/i18n.md) | 语言文件规范 |
-| [评测打分](docs/EVAL.md) | 自进化 PASS/FAIL + H2 100 轮战役 |
-| [H2 战役 JSON](docs/h2evo100-campaign.json) | 99/100 Harness2 对齐战役摘要 |
+| [评测打分](docs/EVAL.md) | 自进化 PASS/FAIL + H2 100 轮图表 |
 | [贡献指南](CONTRIBUTING.md) | PR 清单（中英） |
 
 ---

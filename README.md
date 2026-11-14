@@ -177,7 +177,7 @@ Metamorph ships an offline scorecard aligned with the paper-style figure pipelin
 
 Latest checked-in report: **[`docs/EVAL.md`](docs/EVAL.md)** · machine-readable: [`docs/eval-scorecard.json`](docs/eval-scorecard.json)
 
-**Harness2-aligned 100-round campaign** (same demo ledgers + `R=4k`/`P=3k` + agg/seq): **99 / 100** pass · details in [`docs/EVAL.md`](docs/EVAL.md#harness2-对齐--100-轮自进化战役) · [`docs/h2evo100-campaign.json`](docs/h2evo100-campaign.json)
+**Harness2-aligned 100-round campaign** (same demo ledgers + `R=4k`/`P=3k` + agg/seq): **99 / 100** pass · charts in [`docs/EVAL.md`](docs/EVAL.md#harness2-对齐--100-轮自进化战役)
 
 ```bash
 mvn -q test -Dtest=SelfEvolutionTest,EvalScorecardTest
@@ -225,9 +225,8 @@ Metamorph/
 ├── LICENSE
 ├── docs/
 │   ├── i18n.md                   # language policy
-│   ├── EVAL.md                   # latest scorecard + H2 100-round campaign
-│   ├── eval-scorecard.json
-│   └── h2evo100-campaign.json    # 99/100 campaign summary
+│   ├── EVAL.md                   # latest scorecard + H2 100-round charts
+│   └── eval-scorecard.json
 └── src/main/java/com/metamorph/
     ├── cli/                      # metamorph subcommands
     ├── core/                     # method core
@@ -246,8 +245,7 @@ Metamorph/
 | [README (EN)](README.md) | This file |
 | [README (zh-CN)](README.zh-CN.md) | 简体中文 |
 | [Internationalization](docs/i18n.md) | Language file conventions |
-| [Evaluation scorecard](docs/EVAL.md) | Self-evolution PASS/FAIL + H2 100-round campaign |
-| [H2 campaign JSON](docs/h2evo100-campaign.json) | 99/100 Harness2-aligned campaign summary |
+| [Evaluation scorecard](docs/EVAL.md) | Self-evolution PASS/FAIL + H2 100-round charts |
 | [Contributing](CONTRIBUTING.md) | PR checklist (EN + zh-CN) |
 
 ---

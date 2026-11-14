@@ -42,15 +42,49 @@ demo-oc eval
 
 ## Harness2 对齐 · 100 轮自进化战役
 
-对齐 Harness2（`demo.py` / `recursion.py` / `tests/test_workflow.py` / `docs/EXPERIMENTS.md`）的方法与数据，在 Metamorph 上强制跑满 **100** 轮 `metamorph eval`（DeepSeek 旁路确认）。
+对齐 Harness2（`demo.py` / `recursion.py` / `tests/test_workflow.py` / `docs/EXPERIMENTS.md`）的方法与数据，在 Metamorph 上强制跑满 **100** 轮 `metamorph eval`（DeepSeek 旁路确认）。起止：2026-11-14 09:13:57 → 09:29:11 (+08:00)。
 
-| 项 | 值 |
-|---|---|
-| 战役总评 | **99 / 100 通过** |
-| Harness2 契约对齐 | **99 / 100**（`R=4k`/`P=3k`、scorecard 维度） |
-| DeepSeek 确认 | **99 成功 / 1 失败**（不计入 scorecard 分母） |
-| 起止时间 | 2026-11-14 09:13:57 → 09:29:11 (+08:00) |
-| 机器可读摘要 | [`h2evo100-campaign.json`](h2evo100-campaign.json) |
+### 总览
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#2f9e44', 'pie2': '#e03131'}}}%%
+pie showData
+    title 自进化评测 100 轮 · 通过 vs 失败
+    "通过" : 99
+    "失败" : 1
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#2f9e44', 'pie2': '#e03131'}}}%%
+pie showData
+    title Harness2 契约对齐（R=4k / P=3k + scorecard 维度）
+    "对齐通过" : 99
+    "对齐失败" : 1
+```
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#1971c2', 'pie2': '#e03131'}}}%%
+pie showData
+    title DeepSeek 旁路确认（不计 scorecard 分母）
+    "确认成功" : 99
+    "确认失败" : 1
+```
+
+### 按预算倍数 k 分拆
+
+```mermaid
+xychart-beta
+    title "k=1 / k=2 通过与失败（轮）"
+    x-axis ["k=1 通过", "k=1 失败", "k=2 通过", "k=2 失败"]
+    y-axis "轮数" 0 --> 100
+    bar [89, 1, 10, 0]
+```
+
+| 子集 | 通过 | 失败 |
+|------|------|------|
+| `k=1`（90 轮） | 89 | 1（第 **42** 轮） |
+| `k=2`（10 轮） | 10 | 0 |
+| **合计** | **99** | **1** |
 
 ### 方法与数据（契约）
 
@@ -64,23 +98,11 @@ demo-oc eval
 | 自进化 | 基座失败 → 进化后 selection 通过；Library 保留跨任务材料 |
 | 日程 | 默认 `k=1`；每第 10 轮 `k=2` 清障（10, 20, …, 100） |
 
-### 分拆
-
-| 子集 | 通过 | 失败 |
-|------|------|------|
-| `k=1`（90 轮） | 89 | 1（第 **42** 轮） |
-| `k=2`（10 轮） | 10 | 0 |
-| **合计** | **99** | **1** |
-
-第 42 轮为瞬时 CLI/解析失败（`score=null`），非契约维度系统性回归；后续轮次（含全部 `k=2`）均 PASS。
+第 42 轮为瞬时 CLI/解析失败（`score=null`），非契约维度系统性回归；后续轮次（含全部 `k=2`）均 PASS。本地原始轮次日志在 `runs/h2evo100/`（已 gitignore）。
 
 ## 重新生成
-
-单轮 scorecard（上方主表）：
 
 ```bash
 mvn -q exec:java -Dexec.mainClass=com.metamorph.cli.MetamorphMain \
   -Dexec.args="eval --output runs/eval --k 1 --report docs/EVAL.md --json docs/eval-scorecard.json"
 ```
-
-100 轮战役摘要见 [`h2evo100-campaign.json`](h2evo100-campaign.json)（本地原始轮次日志在 `runs/h2evo100/`，已 gitignore）。
