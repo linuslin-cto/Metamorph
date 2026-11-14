@@ -1,0 +1,14 @@
+services:
+  eval:
+    build: .
+    image: metamorph-eval:latest
+    ports:
+      - "8787:8787"
+    environment:
+      METAMORPH_EVAL_HOST: "0.0.0.0"
+      METAMORPH_EVAL_PORT: "8787"
+      METAMORPH_EVAL_WORK: "/data/runs"
+      METAMORPH_EVAL_DOCS: "/data/docs/MAIN_TABLE.md"
+    volumes:
+      - ./runs:/data/runs
+      - ../docs:/data/docs

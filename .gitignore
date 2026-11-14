@@ -32,6 +32,14 @@ runs/
 *.log
 *.tmp
 
+# Python eval-service
+eval-service/.venv/
+eval-service/**/__pycache__/
+eval-service/.pytest_cache/
+eval-service/*.egg-info/
+eval-service/dist/
+eval-service/build/
+
 # Java
 *.class
 *.jar

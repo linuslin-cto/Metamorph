@@ -36,7 +36,8 @@ Metamorph 追问的是：*执行环境能否跨任务自我改进？*
 **预算身份：** `R = 4k` rollout，`P = 3k` 改进阶段（每种 mode）。  
 **模式：** `agg`（并行）与 `seq`（顺序）。
 
-离线契约见 [`docs/EVAL.md`](docs/EVAL.md) —— 当前 **PASS / 100**。
+离线契约见 [`docs/EVAL.md`](docs/EVAL.md) —— 当前 **PASS / 100**。  
+论文主表独立评测服务（Python 进程）：[`eval-service/`](eval-service/) · 快照 [`docs/MAIN_TABLE.md`](docs/MAIN_TABLE.md)。
 
 ---
 

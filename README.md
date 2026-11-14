@@ -36,7 +36,8 @@ Metamorph instead asks: *can the execution environment improve itself across tas
 **Budgets (paper identity):** `R = 4k` rollouts, `P = 3k` improvement stages per mode.  
 **Modes:** `agg` (parallel) and `seq` (sequential).
 
-Offline contract: [`docs/EVAL.md`](docs/EVAL.md) — currently **PASS / 100**.
+Offline contract: [`docs/EVAL.md`](docs/EVAL.md) — currently **PASS / 100**.  
+Paper main-table service (separate Python process): [`eval-service/`](eval-service/) · snapshot [`docs/MAIN_TABLE.md`](docs/MAIN_TABLE.md).
 
 ---
 
@@ -243,6 +244,8 @@ Metamorph/
 | [README (zh-CN)](README.zh-CN.md) | 简体中文 |
 | [Internationalization](docs/i18n.md) | Language file conventions |
 | [Evaluation scorecard](docs/EVAL.md) | Self-evolution PASS/FAIL report |
+| [Eval service](eval-service/) | Standalone Python main-table API |
+| [Main table snapshot](docs/MAIN_TABLE.md) | WB/JB/LAB cell export |
 | [Contributing](CONTRIBUTING.md) | PR checklist (EN + zh-CN) |
 
 ---

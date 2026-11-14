@@ -1,0 +1,12 @@
+{"bench":"wb","harness":"base","mode":"agg","k":1,"seed":0,"score":50.0,"steps":10}
+{"bench":"wb","harness":"base","mode":"agg","k":1,"seed":1,"score":52.0,"steps":11}
+{"bench":"wb","harness":"base","mode":"agg","k":1,"seed":2,"score":48.0,"steps":9}
+{"bench":"wb","harness":"metamorph","mode":"agg","k":1,"seed":0,"score":60.0,"steps":12}
+{"bench":"wb","harness":"metamorph","mode":"agg","k":1,"seed":1,"score":62.0,"steps":13}
+{"bench":"wb","harness":"metamorph","mode":"agg","k":1,"seed":2,"score":64.0,"steps":14}
+{"bench":"wb","harness":"base","mode":"seq","k":1,"seed":0,"score":49.0}
+{"bench":"wb","harness":"base","mode":"seq","k":1,"seed":1,"score":51.0}
+{"bench":"wb","harness":"base","mode":"seq","k":1,"seed":2,"score":50.0}
+{"bench":"wb","harness":"metamorph","mode":"seq","k":1,"seed":0,"score":61.0}
+{"bench":"wb","harness":"metamorph","mode":"seq","k":1,"seed":1,"score":63.0}
+{"bench":"wb","harness":"metamorph","mode":"seq","k":1,"seed":2,"score":62.0}

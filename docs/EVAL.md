@@ -131,13 +131,15 @@ xychart-beta
 
 | 论文要求 | 本报告状态 |
 |----------|------------|
-| WB / JB / LAB 全量分数与 ±SD（3 seeds） | ❌ 未跑 LiveLLM；仅 Demo 契约 |
-| Base / ReasoningBank / Meta-Harness / Harness Scaling 对比 | ❌ 仅 Base vs Metamorph（Demo） |
-| `#Steps` 执行步数 | 部分可从轨迹导出；Demo 以 deliverable 对错为主 |
+| WB / JB / LAB 全量分数与 ±SD（3 seeds） | 独立服务可 ingest；样例骨架见 [`MAIN_TABLE.md`](MAIN_TABLE.md)；真实 LiveLLM 全量仍待跑批 |
+| Base / ReasoningBank / Meta-Harness / Harness Scaling 对比 | ❌ 主表槽位已预留；当前填充以 Base vs Metamorph 为主 |
+| `#Steps` 执行步数 | 单元格支持 `steps`/`steps_sd`；Demo 以 deliverable 对错为主 |
 | 跨基准 Library 迁移（如 JB→WB） | ❌ 未测；同域 ledger-1→2 已测 |
 | 同模型兼 executor+editor | ❌ 离线确定性 improver |
 
-**结论：** 在论文规定的**方法骨架**（对比 PPC、双递归、R/P 预算、Library、Judge→Report、Base→Evolved 增益）上，Metamorph 离线评测 **全部通过**；$k{=}1$ 与 $k{=}2$ 均 **PASS / 100**。要复现论文 Table 1–2 量级数字，需接 OpenCode/Codex + 三基准全量跑批。
+**独立评测服务（Python，与本 Java CLI 进程/依赖分离）：** [`../eval-service/`](../eval-service/) — `POST /v1/import/livellm`、`GET /v1/tables/main/completeness`、`POST /v1/sync/docs`。
+
+**结论：** 在论文规定的**方法骨架**（对比 PPC、双递归、R/P 预算、Library、Judge→Report、Base→Evolved 增益）上，Metamorph 离线评测 **全部通过**；$k{=}1$ 与 $k{=}2$ 均 **PASS / 100**。要复现论文 Table 1–2 量级数字，需接 OpenCode/Codex + 三基准全量跑批，再经 eval-service 写入主表。
 
 ## 8. 重新生成
 
@@ -149,4 +151,7 @@ mvn -q exec:java -Dexec.mainClass=com.metamorph.cli.MetamorphMain \
 # 递归清障 k=2（对照噪声地板）
 mvn -q exec:java -Dexec.mainClass=com.metamorph.cli.MetamorphMain \
   -Dexec.args="eval --output runs/eval-k2 --k 2 --report runs/eval-k2/EVAL.md --json runs/eval-k2/scorecard.json"
+
+# 独立评测服务：主表同步
+# cd eval-service && python scripts/sync_main_table.py --demo --import tests/fixtures/livellm_sample.jsonl
 ```
