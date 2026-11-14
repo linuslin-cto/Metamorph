@@ -1,4 +1,4 @@
-# Metamorph
+﻿# Metamorph
 
 [![Java](https://img.shields.io/badge/Java-21+-ED8B00?logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Maven](https://img.shields.io/badge/Maven-3.9+-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
@@ -37,7 +37,7 @@ Metamorph 追问的是：*执行环境能否跨任务自我改进？*
 **模式：** `agg`（并行）与 `seq`（顺序）。
 
 离线契约见 [`docs/EVAL.md`](docs/EVAL.md) —— 当前 **PASS / 100**。  
-论文主表独立评测服务（Python 进程）：[`eval-service/`](eval-service/) · 快照 [`docs/MAIN_TABLE.md`](docs/MAIN_TABLE.md)。
+论文主表独立评测服务（Python 进程）：[metamorph-eval-service](https://github.com/linuslin-cto/metamorph-eval-service) · 快照 [`docs/MAIN_TABLE.md`](docs/MAIN_TABLE.md)。
 
 ---
 
@@ -282,3 +282,4 @@ Metamorph 实现 Propose–Probe–Compose 递归 harnessing 方法。若用于�
 <p align="center">
   <b>Metamorph</b> — 进化 harness，固定模型。
 </p>
+

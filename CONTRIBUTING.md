@@ -1,4 +1,4 @@
-# Contributing to Metamorph
+﻿# Contributing to Metamorph
 
 [English](#english) | [简体中文](#简体中文)
 
@@ -17,7 +17,7 @@ mvn -q exec:java -Dexec.mainClass=com.metamorph.cli.MetamorphMain \
 ```
 
 5. Prefer small, focused PRs with a clear “why”.
-6. If you change [`eval-service/`](eval-service/), run `cd eval-service && pip install -e ".[dev]" && pytest -q` (independent of `mvn test`).
+6. If you change [metamorph-eval-service](https://github.com/linuslin-cto/metamorph-eval-service), run `(in https://github.com/linuslin-cto/metamorph-eval-service)  pip install -e ".[dev]" && pytest -q` (independent of `mvn test`).
 
 ## 简体中文
 
@@ -28,4 +28,5 @@ mvn -q exec:java -Dexec.mainClass=com.metamorph.cli.MetamorphMain \
 3. 翻译约定见 [docs/i18n.md](docs/i18n.md)（标识符保持英文）。
 4. 若 scorecard 维度变化，请按上方命令重新生成 `docs/EVAL.md`。
 5. 优先小而清晰的 PR，说明「为什么改」。
-6. 若改动 [`eval-service/`](eval-service/)，额外运行 `cd eval-service && pip install -e ".[dev]" && pytest -q`（与 `mvn test` 独立）。
+6. 若改动 [metamorph-eval-service](https://github.com/linuslin-cto/metamorph-eval-service)，额外运行 `(in https://github.com/linuslin-cto/metamorph-eval-service)  pip install -e ".[dev]" && pytest -q`（与 `mvn test` 独立）。
+

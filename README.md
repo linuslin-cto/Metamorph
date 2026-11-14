@@ -1,4 +1,4 @@
-# Metamorph
+﻿# Metamorph
 
 [![Java](https://img.shields.io/badge/Java-21+-ED8B00?logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Maven](https://img.shields.io/badge/Maven-3.9+-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
@@ -37,7 +37,7 @@ Metamorph instead asks: *can the execution environment improve itself across tas
 **Modes:** `agg` (parallel) and `seq` (sequential).
 
 Offline contract: [`docs/EVAL.md`](docs/EVAL.md) — currently **PASS / 100**.  
-Paper main-table service (separate Python process): [`eval-service/`](eval-service/) · snapshot [`docs/MAIN_TABLE.md`](docs/MAIN_TABLE.md).
+Paper main-table service (separate Python process): [metamorph-eval-service](https://github.com/linuslin-cto/metamorph-eval-service) · snapshot [`docs/MAIN_TABLE.md`](docs/MAIN_TABLE.md).
 
 ---
 
@@ -244,7 +244,7 @@ Metamorph/
 | [README (zh-CN)](README.zh-CN.md) | 简体中文 |
 | [Internationalization](docs/i18n.md) | Language file conventions |
 | [Evaluation scorecard](docs/EVAL.md) | Self-evolution PASS/FAIL report |
-| [Eval service](eval-service/) | Standalone Python main-table API |
+| [Eval service](https://github.com/linuslin-cto/metamorph-eval-service) | Standalone Python main-table API |
 | [Main table snapshot](docs/MAIN_TABLE.md) | WB/JB/LAB cell export |
 | [Contributing](CONTRIBUTING.md) | PR checklist (EN + zh-CN) |
 
@@ -288,3 +288,4 @@ Metamorph implements the Propose–Probe–Compose recursive harnessing method. 
 <p align="center">
   <b>Metamorph</b> — evolve the harness, keep the model fixed.
 </p>
+

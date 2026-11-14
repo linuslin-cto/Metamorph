@@ -1,4 +1,4 @@
-# Metamorph 评测报告（对齐 Harness² 论文方法）
+﻿# Metamorph 评测报告（对齐 Harness² 论文方法）
 
 依据 [Harness²: Recursive Agent Harnessing for an Open World](https://arxiv.org/abs/2610.14224)（§2–§3）的评测口径，对 Metamorph 做**方法对齐评测**。
 
@@ -137,7 +137,7 @@ xychart-beta
 | 跨基准 Library 迁移（如 JB→WB） | ❌ 未测；同域 ledger-1→2 已测 |
 | 同模型兼 executor+editor | ❌ 离线确定性 improver |
 
-**独立评测服务（Python，与本 Java CLI 进程/依赖分离）：** [`../eval-service/`](../eval-service/) — `POST /v1/import/livellm`、`GET /v1/tables/main/completeness`、`POST /v1/sync/docs`。
+**独立评测服务（Python，与本 Java CLI 进程/依赖分离）：** [metamorph-eval-service](https://github.com/linuslin-cto/metamorph-eval-service) — `POST /v1/import/livellm`、`GET /v1/tables/main/completeness`、`POST /v1/sync/docs`。
 
 **结论：** 在论文规定的**方法骨架**（对比 PPC、双递归、R/P 预算、Library、Judge→Report、Base→Evolved 增益）上，Metamorph 离线评测 **全部通过**；$k{=}1$ 与 $k{=}2$ 均 **PASS / 100**。要复现论文 Table 1–2 量级数字，需接 OpenCode/Codex + 三基准全量跑批，再经 eval-service 写入主表。
 
@@ -153,5 +153,6 @@ mvn -q exec:java -Dexec.mainClass=com.metamorph.cli.MetamorphMain \
   -Dexec.args="eval --output runs/eval-k2 --k 2 --report runs/eval-k2/EVAL.md --json runs/eval-k2/scorecard.json"
 
 # 独立评测服务：主表同步
-# cd eval-service && python scripts/sync_main_table.py --demo --import tests/fixtures/livellm_sample.jsonl
+# cd ../metamorph-eval-service && python scripts/sync_main_table.py --demo --import tests/fixtures/livellm_sample.jsonl
 ```
+

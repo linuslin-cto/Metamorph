@@ -1,4 +1,0 @@
-{"bench":"lab","harness":"base","mode":"agg","k":1,"score":33.0,"n_seeds":3}
-{"bench":"lab","harness":"metamorph","mode":"agg","k":1,"score":58.0,"n_seeds":3}
-{"bench":"lab","harness":"base","mode":"seq","k":1,"score":32.0,"n_seeds":3}
-{"bench":"lab","harness":"metamorph","mode":"seq","k":1,"score":57.0,"n_seeds":3}
