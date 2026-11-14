@@ -1,0 +1,59 @@
+{
+  "ok" : true,
+  "overall" : 100.0,
+  "dimensions" : [ {
+    "id" : "base_fails",
+    "title" : "基座 harness 不及格（存在进化空间）",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "n_passed=0"
+  }, {
+    "id" : "sweep_complete",
+    "title" : "域 sweep 全部完成",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "done=2 failed=0"
+  }, {
+    "id" : "budget_identity",
+    "title" : "预算身份 R=4k / P=3k",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "agg:R=4,P=3 seq:R=4,P=3"
+  }, {
+    "id" : "evolved_passes",
+    "title" : "进化后 selection 通过准则",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "agg:n_passed=1 seq:n_passed=1"
+  }, {
+    "id" : "self_evolution_lift",
+    "title" : "自进化增益（基座失败 → 进化成功）",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "base 0 → evolved pass"
+  }, {
+    "id" : "library_retention",
+    "title" : "Library 保留跨任务材料",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "files=2"
+  }, {
+    "id" : "judge_report",
+    "title" : "Judge→Report 均分 ≥ 99%",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "mean=100.00% modes=2"
+  }, {
+    "id" : "dual_modes",
+    "title" : "agg 与 seq 双模式均有 graded 行",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "summaries=2"
+  }, {
+    "id" : "noise_floor_k1",
+    "title" : "k=1 时 agg/seq 分差为噪声地板（≤1pt）",
+    "pass" : true,
+    "score" : 100.0,
+    "detail" : "gap=0.00 (agg=100.00 seq=100.00)"
+  } ]
+}
