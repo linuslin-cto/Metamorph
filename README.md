@@ -4,7 +4,6 @@
 [![Maven](https://img.shields.io/badge/Maven-3.9+-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Eval](https://img.shields.io/badge/self--evolution%20eval-PASS%20%2F%20100-brightgreen)](docs/EVAL.md)
-[![H2 campaign](https://img.shields.io/badge/H2%20aligned%20100--round-99%2F100-brightgreen)](docs/EVAL.md#harness2-对齐--100-轮自进化战役)
 [![GitHub stars](https://img.shields.io/github/stars/linuslin-cto/Metamorph)](https://github.com/linuslin-cto/Metamorph)
 
 **English** | [简体中文](README.zh-CN.md)
@@ -37,7 +36,7 @@ Metamorph instead asks: *can the execution environment improve itself across tas
 **Budgets (paper identity):** `R = 4k` rollouts, `P = 3k` improvement stages per mode.  
 **Modes:** `agg` (parallel) and `seq` (sequential).
 
-Offline contract: [`docs/EVAL.md`](docs/EVAL.md) — single-run **PASS / 100**; H2-aligned 100-round campaign **99 / 100**.
+Offline contract: [`docs/EVAL.md`](docs/EVAL.md) — currently **PASS / 100**.
 
 ---
 
@@ -177,8 +176,6 @@ Metamorph ships an offline scorecard aligned with the paper-style figure pipelin
 
 Latest checked-in report: **[`docs/EVAL.md`](docs/EVAL.md)** · machine-readable: [`docs/eval-scorecard.json`](docs/eval-scorecard.json)
 
-**Harness2-aligned 100-round campaign** (same demo ledgers + `R=4k`/`P=3k` + agg/seq): **99 / 100** pass · charts in [`docs/EVAL.md`](docs/EVAL.md#harness2-对齐--100-轮自进化战役)
-
 ```bash
 mvn -q test -Dtest=SelfEvolutionTest,EvalScorecardTest
 ```
@@ -225,7 +222,7 @@ Metamorph/
 ├── LICENSE
 ├── docs/
 │   ├── i18n.md                   # language policy
-│   ├── EVAL.md                   # latest scorecard + H2 100-round charts
+│   ├── EVAL.md                   # latest scorecard
 │   └── eval-scorecard.json
 └── src/main/java/com/metamorph/
     ├── cli/                      # metamorph subcommands
@@ -245,7 +242,7 @@ Metamorph/
 | [README (EN)](README.md) | This file |
 | [README (zh-CN)](README.zh-CN.md) | 简体中文 |
 | [Internationalization](docs/i18n.md) | Language file conventions |
-| [Evaluation scorecard](docs/EVAL.md) | Self-evolution PASS/FAIL + H2 100-round charts |
+| [Evaluation scorecard](docs/EVAL.md) | Self-evolution PASS/FAIL report |
 | [Contributing](CONTRIBUTING.md) | PR checklist (EN + zh-CN) |
 
 ---

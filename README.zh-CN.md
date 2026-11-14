@@ -4,7 +4,6 @@
 [![Maven](https://img.shields.io/badge/Maven-3.9+-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Eval](https://img.shields.io/badge/self--evolution%20eval-PASS%20%2F%20100-brightgreen)](docs/EVAL.md)
-[![H2 campaign](https://img.shields.io/badge/H2%20aligned%20100--round-99%2F100-brightgreen)](docs/EVAL.md#harness2-对齐--100-轮自进化战役)
 [![GitHub stars](https://img.shields.io/github/stars/linuslin-cto/Metamorph)](https://github.com/linuslin-cto/Metamorph)
 
 [English](README.md) | **简体中文**
@@ -37,7 +36,7 @@ Metamorph 追问的是：*执行环境能否跨任务自我改进？*
 **预算身份：** `R = 4k` rollout，`P = 3k` 改进阶段（每种 mode）。  
 **模式：** `agg`（并行）与 `seq`（顺序）。
 
-离线契约见 [`docs/EVAL.md`](docs/EVAL.md) —— 单轮 **PASS / 100**；H2 对齐 100 轮战役 **99 / 100**。
+离线契约见 [`docs/EVAL.md`](docs/EVAL.md) —— 当前 **PASS / 100**。
 
 ---
 
@@ -173,8 +172,6 @@ Propose（改 harness） → Probe（rollout） → Compose（acceptTree）
 
 最新入库报告：**[`docs/EVAL.md`](docs/EVAL.md)** · JSON：[`docs/eval-scorecard.json`](docs/eval-scorecard.json)
 
-**Harness2 对齐 100 轮战役**（同 demo 账本 + `R=4k`/`P=3k` + agg/seq）：**99 / 100** 通过 · 图表见 [`docs/EVAL.md`](docs/EVAL.md#harness2-对齐--100-轮自进化战役)
-
 ```bash
 mvn -q test -Dtest=SelfEvolutionTest,EvalScorecardTest
 ```
@@ -221,7 +218,7 @@ Metamorph/
 ├── LICENSE
 ├── docs/
 │   ├── i18n.md                   # 语言约定
-│   ├── EVAL.md                   # 最新打分 + H2 100 轮图表
+│   ├── EVAL.md                   # 最新打分
 │   └── eval-scorecard.json
 └── src/main/java/com/metamorph/
     ├── cli/
@@ -241,7 +238,7 @@ Metamorph/
 | [README (EN)](README.md) | English |
 | [README (zh-CN)](README.zh-CN.md) | 本文 |
 | [国际化约定](docs/i18n.md) | 语言文件规范 |
-| [评测打分](docs/EVAL.md) | 自进化 PASS/FAIL + H2 100 轮图表 |
+| [评测打分](docs/EVAL.md) | 自进化 PASS/FAIL |
 | [贡献指南](CONTRIBUTING.md) | PR 清单（中英） |
 
 ---
